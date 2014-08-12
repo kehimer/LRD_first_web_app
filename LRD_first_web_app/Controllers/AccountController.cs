@@ -19,7 +19,7 @@ namespace LRD_first_web_app.Controllers
     public class AccountController : Controller
     {
         public UsuarioDBEntities _Entities=new UsuarioDBEntities();
-        
+        public int IdUsuarioDeLaBaseDeDatos=0;
         
         public AccountController()
             : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
@@ -57,10 +57,10 @@ namespace LRD_first_web_app.Controllers
                 {
                     if (model.UserName.Equals(itera.Nombre))
                     {
-                        
 
+                        IdUsuarioDeLaBaseDeDatos = itera.Id;
                         //si existe entonces hay que cambiar a la vista de las fotos de este usuario
-                        return RedirectToAction("Register", "Account");
+                        return RedirectToAction("MostrarGaleria", "Account");
                     }
 
                 }
@@ -123,9 +123,21 @@ namespace LRD_first_web_app.Controllers
             return View(model);
         }
 
-       
-       
-      
+        [AllowAnonymous]
+        public ActionResult MostrarGaleria()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult MostrarGaleria(RegisterViewModel model)
+        {
+            return RedirectToAction("MostrarGaleria", "Account");
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()

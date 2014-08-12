@@ -167,6 +167,24 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Galeria.cs">
+      <DependentUpon>GaleriaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GaleriaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaleriaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GaleriaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaleriaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GaleriaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GaleriaModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\UserModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -219,6 +237,23 @@
       <DependentUpon>UserModel.edmx</DependentUpon>
       <LastGenOutput>UserModel.cs</LastGenOutput>
     </Content>
+    <EntityDeploy Include="Models\GaleriaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GaleriaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\GaleriaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GaleriaModel.edmx</DependentUpon>
+      <LastGenOutput>GaleriaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\GaleriaModel.edmx.diagram">
+      <DependentUpon>GaleriaModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\GaleriaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GaleriaModel.edmx</DependentUpon>
+      <LastGenOutput>GaleriaModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -247,6 +282,8 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\MostrarGaleria.cshtml" />
+    <Content Include="Views\Account\CrearGaleria.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -258,7 +295,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Galeria\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

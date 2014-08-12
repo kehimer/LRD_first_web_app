@@ -12,10 +12,10 @@ namespace LRD_first_web_app.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario
+    public partial class Galeria
     {
         public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Password { get; set; }
+        public int Usuario { get; set; }
+        public byte[] foto { get; set; }
     }
 }
